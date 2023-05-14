@@ -1,0 +1,20 @@
+{
+  "name": "node-fundementals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Http.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mhamad-Raad/Node-Fundementals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mhamad-Raad/Node-Fundementals/issues"
+  },
+  "homepage": "https://github.com/Mhamad-Raad/Node-Fundementals#readme"
+}
