@@ -1,8 +1,8 @@
-const http = require('http');
+const { get } = require('http');
 
 const link = 'http://www.google.com';
 
-const request = http.request(link, (res) => {
+const request = get(link, (res) => {
   res.on('data', (chunk) => {
     console.log(`Data: ${chunk.toString()}`);
   });
@@ -11,5 +11,3 @@ const request = http.request(link, (res) => {
     console.log('Response has ended');
   });
 });
-
-request.end()
