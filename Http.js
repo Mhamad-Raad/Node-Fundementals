@@ -1,13 +1,15 @@
-const { get } = require('http');
+const axios = require('axios');
 
 const link = 'http://www.google.com';
 
-const request = get(link, (res) => {
-  res.on('data', (chunk) => {
-    console.log(`Data: ${chunk.toString()}`);
+axios.get(link)
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+  .then(() => {
+    console.log('All done');
   });
 
-  res.on('end', () => {
-    console.log('Response has ended');
-  });
-});

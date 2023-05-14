@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Mhamad-Raad/Node-Fundementals/issues"
   },
-  "homepage": "https://github.com/Mhamad-Raad/Node-Fundementals#readme"
+  "homepage": "https://github.com/Mhamad-Raad/Node-Fundementals#readme",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
 }
