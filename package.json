@@ -4,7 +4,7 @@
   "description": "",
   "main": "Http.js",
   "scripts": {
-    "start": "node Http.js",
+    "start": "npx nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Mhamad-Raad/Node-Fundementals#readme",
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "nodemon": "^2.0.22"
   }
 }
