@@ -50,6 +50,8 @@ const server = http.createServer((req, res) => {
   }
 });
 
+//end the fundementals
+
 server.listen(PORT, () => {
   console.log(`Server running at ${PORT}...`);
 });
