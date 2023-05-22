@@ -1,43 +1,49 @@
 const http = require('http');
 
 const PORT = 3000;
+const friends = [
+  {
+    name: 'Ali',
+    id: 1,
+  },
+  {
+    name: 'Ahmed',
+    id: 2,
+  },
+];
+
+const messages = [
+  {
+    text: 'Hello World!',
+    id: 1,
+  },
+  {
+    text: 'Hello World!!',
+    id: 2,
+  },
+];
 
 const server = http.createServer((req, res) => {
-  // res.writeHead(200, {
-  //   'Content-Type': 'application/json',
-  // });
+  const url = req.url.split('/');
+  url.shift();
 
-  if (req.url === '/friends') {
+  if (url[0] === 'friends') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-
-    res.end(
-      JSON.stringify([
-        {
-          name: 'Ali',
-          id: 1,
-        },
-        {
-          name: 'Ahmed',
-          id: 2,
-        },
-      ])
-    );
-  } else if (req.url === '/message') {
+    if (url[1]) {
+      const index = +url[1];
+      res.end(JSON.stringify(friends[index]));
+    }
+    res.end(JSON.stringify(friends));
+  } else if (url[0] === '/message') {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
-    res.end(
-      JSON.stringify([
-        {
-          text: 'Hello World!',
-          id: 1,
-        },
-        {
-          text: 'Hello World!!',
-          id: 2,
-        },
-      ])
-    );
+    if (url[1]) {
+      const index = +url[1];
+      res.end(JSON.stringify(messages[index]));
+      return;
+    }
+    res.end(JSON.stringify(messages));
   } else {
     res.statusCode = 404;
     res.end();
